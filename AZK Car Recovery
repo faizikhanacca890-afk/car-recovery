@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AZK Car Recovery Dubai – 24/7 Towing & Recovery Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:    #e8271a;
+      --red2:   #ff3c2e;
+      --dark:   #0d0d0d;
+      --dark2:  #161616;
+      --dark3:  #1f1f1f;
+      --mid:    #2a2a2a;
+      --steel:  #3c3c3c;
+      --silver: #a0a0a0;
+      --white:  #f5f5f5;
+      --yellow: #f5c800;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--dark);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 6%;
+      background: rgba(13,13,13,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(232,39,26,0.25);
+    }
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem; letter-spacing: 2px;
+      color: var(--white);
+    }
+    .logo span { color: var(--red); }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--silver);
+      font-weight: 600; font-size: .9rem; letter-spacing: 1px;
+      text-transform: uppercase; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--red); }
+    .nav-cta {
+      background: var(--red); color: #fff;
+      padding: 10px 24px; border-radius: 4px;
+      font-weight: 700; font-size: .85rem;
+      text-decoration: none; letter-spacing: 1px;
+      text-transform: uppercase; transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--red2); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 120px 6% 80px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 70% 50%, rgba(232,39,26,0.12) 0%, transparent 70%),
+        linear-gradient(160deg, #0d0d0d 0%, #1a1a1a 100%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; opacity: .06;
+      background-image:
+        linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-stripe {
+      position: absolute; right: 0; top: 0; bottom: 0;
+      width: 42%;
+      clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+      background: linear-gradient(135deg, #1a0a09 0%, #200d0b 100%);
+      overflow: hidden;
+    }
+    .hero-truck-img {
+      position: absolute;
+      bottom: 0; right: -40px;
+      width: 110%; height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      opacity: 0.55;
+      mix-blend-mode: luminosity;
+    }
+    .hero-content { position: relative; max-width: 580px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(232,39,26,0.15); border: 1px solid rgba(232,39,26,0.4);
+      color: var(--red2); font-size: .8rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 3px; margin-bottom: 24px;
+    }
+    .hero-badge::before { content: '●'; font-size: .5rem; animation: blink 1.2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 6.5rem);
+      line-height: .95;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+    h1 em { color: var(--red); font-style: normal; }
+    .hero-sub {
+      font-size: 1.1rem; color: var(--silver);
+      line-height: 1.7; max-width: 440px; margin-bottom: 40px;
+    }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--red); color: #fff;
+      padding: 16px 36px; border-radius: 4px;
+      font-weight: 700; font-size: 1rem;
+      text-decoration: none; letter-spacing: 1px;
+      text-transform: uppercase; transition: transform .15s, background .2s;
+      border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--red2); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      padding: 16px 36px; border-radius: 4px;
+      font-weight: 700; font-size: 1rem;
+      text-decoration: none; letter-spacing: 1px;
+      text-transform: uppercase; border: 2px solid var(--steel);
+      transition: border-color .2s, color .2s;
+    }
+    .btn-outline:hover { border-color: var(--red); color: var(--red); }
+
+    .hero-stats {
+      display: flex; gap: 40px; margin-top: 56px;
+      padding-top: 40px; border-top: 1px solid var(--mid);
+    }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem; color: var(--red); line-height: 1;
+    }
+    .stat-label { font-size: .75rem; color: var(--silver); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+
+    /* ── TICKER ── */
+    .ticker {
+      background: var(--red);
+      padding: 12px 0; overflow: hidden; white-space: nowrap;
+    }
+    .ticker-inner {
+      display: inline-block;
+      animation: ticker 25s linear infinite;
+    }
+    .ticker-inner span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: #fff; margin: 0 40px;
+    }
+    .ticker-inner span::before { content: '⚡ '; }
+    @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+    /* ── SECTIONS ── */
+    section { padding: 100px 6%; }
+    .section-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .8rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--red);
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      letter-spacing: 1px; line-height: 1;
+      margin-bottom: 16px;
+    }
+    .sub-text { color: var(--silver); font-size: 1rem; line-height: 1.7; max-width: 480px; margin-bottom: 60px; }
+
+    /* ── SERVICES ── */
+    #services { background: var(--dark2); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+    }
+    .service-card {
+      background: var(--dark3);
+      padding: 40px 36px;
+      border-top: 3px solid transparent;
+      transition: border-color .2s, background .2s, transform .2s;
+      cursor: default;
+    }
+    .service-card:hover {
+      border-color: var(--red);
+      background: #1d1d1d;
+      transform: translateY(-4px);
+    }
+    .s-icon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
+    .service-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.4rem; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; margin-bottom: 12px;
+    }
+    .service-card p { color: var(--silver); font-size: .95rem; line-height: 1.65; }
+
+    /* ── HOW IT WORKS ── */
+    #how { position: relative; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; }
+    .step {
+      padding: 40px 36px;
+      border-left: 1px solid var(--mid);
+      position: relative;
+    }
+    .step:first-child { border-left: none; }
+    .step-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5rem; color: rgba(232,39,26,0.12);
+      line-height: 1; position: absolute;
+      top: 24px; right: 24px;
+    }
+    .step-icon { font-size: 2rem; margin-bottom: 16px; }
+    .step h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.3rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .step p { color: var(--silver); font-size: .9rem; line-height: 1.65; }
+
+    /* ── WHY US ── */
+    #why { background: var(--dark2); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .why-visual {
+      background: var(--dark3);
+      border-radius: 4px; padding: 60px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .why-visual::before {
+      content: '🚗💥🚛';
+      font-size: 5rem; display: block; margin-bottom: 24px;
+      filter: grayscale(.4);
+    }
+    .why-visual-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem; color: var(--red);
+    }
+    .why-visual-sub { color: var(--silver); font-size: .85rem; margin-top: 6px; }
+    .feature-list { display: flex; flex-direction: column; gap: 24px; }
+    .feature-item { display: flex; gap: 20px; align-items: flex-start; }
+    .feature-icon {
+      width: 48px; height: 48px; flex-shrink: 0;
+      background: rgba(232,39,26,0.12);
+      border: 1px solid rgba(232,39,26,0.3);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .feature-item h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; margin-bottom: 4px;
+    }
+    .feature-item p { color: var(--silver); font-size: .9rem; line-height: 1.5; }
+
+    /* ── TESTIMONIALS ── */
+    #reviews {
+      background:
+        linear-gradient(to bottom, var(--dark) 0%, #150808 100%);
+    }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .review-card {
+      background: var(--dark3);
+      border: 1px solid var(--mid);
+      padding: 32px;
+      border-radius: 4px;
+      transition: border-color .2s;
+    }
+    .review-card:hover { border-color: rgba(232,39,26,0.4); }
+    .stars { color: var(--yellow); font-size: 1rem; margin-bottom: 16px; }
+    .review-text { color: var(--silver); font-size: .95rem; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .reviewer { display: flex; align-items: center; gap: 14px; }
+    .avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--red);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1.1rem;
+    }
+    .reviewer-name { font-weight: 700; font-size: .95rem; }
+    .reviewer-loc { color: var(--silver); font-size: .8rem; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--dark2); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 28px; }
+    .contact-item { display: flex; gap: 18px; align-items: flex-start; }
+    .c-icon {
+      width: 52px; height: 52px; flex-shrink: 0;
+      background: var(--red);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+    }
+    .contact-item h4 { font-weight: 700; margin-bottom: 4px; font-size: 1rem; }
+    .contact-item p { color: var(--silver); font-size: .9rem; }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      background: var(--dark3); border: 1px solid var(--mid);
+      color: var(--white); padding: 14px 16px;
+      border-radius: 4px; font-family: 'Barlow', sans-serif;
+      font-size: .95rem; outline: none;
+      transition: border-color .2s;
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus { border-color: var(--red); }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: var(--steel); }
+    .contact-form textarea { resize: vertical; min-height: 120px; }
+    .contact-form select option { background: var(--dark3); }
+
+    /* ── EMERGENCY BAND ── */
+    .emergency-band {
+      background: var(--red);
+      padding: 60px 6%;
+      text-align: center;
+    }
+    .emergency-band h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: #fff; margin-bottom: 8px; letter-spacing: 2px;
+    }
+    .emergency-band p { color: rgba(255,255,255,0.8); margin-bottom: 28px; font-size: 1rem; }
+    .phone-big {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: rgba(0,0,0,0.25);
+      padding: 16px 36px; border-radius: 4px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem; color: #fff; text-decoration: none;
+      letter-spacing: 3px;
+      transition: background .2s;
+    }
+    .phone-big:hover { background: rgba(0,0,0,0.4); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080808;
+      padding: 60px 6% 30px;
+      border-top: 1px solid var(--mid);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px; margin-bottom: 50px;
+    }
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem; letter-spacing: 2px; margin-bottom: 14px;
+    }
+    .footer-logo span { color: var(--red); }
+    .footer-desc { color: var(--silver); font-size: .9rem; line-height: 1.7; max-width: 260px; }
+    .footer-col h5 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: .85rem;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--white); margin-bottom: 18px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a { color: var(--silver); text-decoration: none; font-size: .9rem; transition: color .2s; }
+    .footer-col ul a:hover { color: var(--red); }
+    .footer-bottom {
+      border-top: 1px solid var(--mid);
+      padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-bottom p { color: var(--steel); font-size: .85rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .why-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-stripe { display: none; }
+      .nav-links { display: none; }
+      .hero-stats { gap: 24px; }
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">AZK <span>Car Recovery</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:+971559307106" class="nav-cta">📞 Call Now</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-stripe"></div>
+  <div class="hero-content">
+    <div class="hero-badge">24/7 Emergency Response – Dubai</div>
+    <h1>Stranded in<br>Dubai? We're <em>15 Min Away.</em></h1>
+    <p class="hero-sub">
+      AZK Car Recovery Dubai — fast, reliable towing and roadside assistance across Dubai. Based in Al Barsha, near Insurance Market Metro.
+    </p>
+    <div class="hero-btns">
+      <a href="tel:+971559307106" class="btn-primary">🚨 Call +971 55 930 7106</a>
+      <a href="https://wa.me/971559307106" target="_blank" class="btn-outline">💬 WhatsApp Us</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">15<span style="font-size:1.5rem">min</span></div>
+        <div class="stat-label">Average Response</div>
+      </div>
+      <div>
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Always Available</div>
+      </div>
+      <div>
+        <div class="stat-num">5K+</div>
+        <div class="stat-label">Cars Recovered</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>24/7 Emergency Towing</span>
+    <span>Roadside Assistance</span>
+    <span>Accident Recovery</span>
+    <span>Flatbed Towing</span>
+    <span>Jump Start Service</span>
+    <span>Fuel Delivery</span>
+    <span>Lockout Service</span>
+    <span>30 Minute Response</span>
+    <span>24/7 Emergency Towing</span>
+    <span>Roadside Assistance</span>
+    <span>Accident Recovery</span>
+    <span>Flatbed Towing</span>
+    <span>Jump Start Service</span>
+    <span>Fuel Delivery</span>
+    <span>Lockout Service</span>
+    <span>30 Minute Response</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-tag">What We Offer</div>
+  <h2>Our Services</h2>
+  <p class="sub-text">From emergency towing to full roadside support — we handle every situation with speed and professionalism.</p>
+  <div class="services-grid fade-up">
+    <div class="service-card">
+      <span class="s-icon">🚛</span>
+      <h3>Emergency Towing</h3>
+      <p>Broken down or in an accident? Our fleet of heavy-duty tow trucks reaches you fast. Available 24 hours a day, 7 days a week.</p>
+    </div>
+    <div class="service-card">
+      <span class="s-icon">🔧</span>
+      <h3>Roadside Assistance</h3>
+      <p>Flat tire, dead battery, or mechanical failure — our technicians come to you with the tools and parts to get you moving again.</p>
+    </div>
+    <div class="service-card">
+      <span class="s-icon">⚡</span>
+      <h3>Jump Start Service</h3>
+      <p>Dead battery? We'll get you jump-started within minutes. If the battery needs replacing, we carry stock on board.</p>
+    </div>
+    <div class="service-card">
+      <span class="s-icon">⛽</span>
+      <h3>Fuel Delivery</h3>
+      <p>Ran out of fuel? We'll bring enough to get you to the nearest station — quick and hassle-free.</p>
+    </div>
+    <div class="service-card">
+      <span class="s-icon">🔑</span>
+      <h3>Lockout Service</h3>
+      <p>Locked your keys inside? Our trained specialists will unlock your vehicle safely without causing any damage.</p>
+    </div>
+    <div class="service-card">
+      <span class="s-icon">🏗️</span>
+      <h3>Accident Recovery</h3>
+      <p>We work closely with insurance companies to handle post-accident recovery, clearing the scene safely and efficiently.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-tag">Simple Process</div>
+  <h2>How It Works</h2>
+  <p class="sub-text">Getting help is as easy as three steps. No stress, no waiting in the dark.</p>
+  <div class="steps fade-up">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-icon">📞</div>
+      <h3>Call or Request</h3>
+      <p>Call our 24/7 hotline or fill in the contact form with your location and situation details.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-icon">📍</div>
+      <h3>We Locate You</h3>
+      <p>Our dispatcher identifies your exact location and assigns the nearest available unit to you immediately.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-icon">🚀</div>
+      <h3>Help Arrives Fast</h3>
+      <p>A professional technician arrives within 15 minutes, fully equipped to handle your situation on the spot.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-icon">✅</div>
+      <h3>Problem Solved</h3>
+      <p>We fix, tow, or recover your vehicle and ensure you're safely on your way before we leave.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-tag">Our Edge</div>
+  <div class="why-grid">
+    <div>
+      <h2>Why Choose SwiftTow?</h2>
+      <p class="sub-text">We don't just tow cars — we give drivers peace of mind when they need it most.</p>
+      <div class="feature-list fade-up">
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <div>
+            <h4>Lightning Fast Response</h4>
+            <p>Our GPS-dispatched fleet means the nearest truck is always headed your way within 15 minutes of your call — anywhere in Dubai.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🛡️</div>
+          <div>
+            <h4>Fully Licensed & Insured</h4>
+            <p>Every operator is certified, background-checked, and fully insured. Your vehicle is in safe hands.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💰</div>
+          <div>
+            <h4>Transparent Pricing</h4>
+            <p>No hidden fees, no surprises. We give you an upfront quote before we even start the engine.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🌍</div>
+          <div>
+            <h4>Wide Coverage Area</h4>
+            <p>We operate across the entire region — highways, backroads, urban centres, and rural areas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual">
+      <div class="why-visual-text">15 MIN</div>
+      <div class="why-visual-sub">Average Response Time</div>
+      <div style="margin-top:32px; display:flex; flex-direction:column; gap:10px;">
+        <div style="background:rgba(232,39,26,0.1); border:1px solid rgba(232,39,26,0.2); padding:14px 18px; border-radius:3px; text-align:left;">
+          <div style="font-size:.75rem; color:var(--silver); letter-spacing:1px; text-transform:uppercase;">Customer Rating</div>
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:2rem; color:var(--yellow);">4.9 ★★★★★</div>
+        </div>
+        <div style="background:rgba(232,39,26,0.1); border:1px solid rgba(232,39,26,0.2); padding:14px 18px; border-radius:3px; text-align:left;">
+          <div style="font-size:.75rem; color:var(--silver); letter-spacing:1px; text-transform:uppercase;">Vehicles Recovered</div>
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:2rem; color:var(--white);">5,000+</div>
+        </div>
+        <div style="background:rgba(232,39,26,0.1); border:1px solid rgba(232,39,26,0.2); padding:14px 18px; border-radius:3px; text-align:left;">
+          <div style="font-size:.75rem; color:var(--silver); letter-spacing:1px; text-transform:uppercase;">Years in Service</div>
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:2rem; color:var(--white);">10+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="reviews">
+  <div class="section-tag">Customer Reviews</div>
+  <h2>What Drivers Say</h2>
+  <p class="sub-text">Real stories from real people we've helped on the road.</p>
+  <div class="reviews-grid fade-up">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"I was stranded on Sheikh Zayed Road at midnight and AZK Car Recovery arrived in under 15 minutes. Professional, calm, and got my car safely to the garage. Absolute lifesavers."</p>
+      <div class="reviewer">
+        <div class="avatar">JM</div>
+        <div>
+          <div class="reviewer-name">James Mitchell</div>
+          <div class="reviewer-loc">📍 Sheikh Zayed Road, Dubai</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Locked my keys in the car at Mall of the Emirates. Called AZK and they arrived in 12 minutes, unlocked it with no damage. Highly recommend to everyone in Dubai!"</p>
+      <div class="reviewer">
+        <div class="avatar">SR</div>
+        <div>
+          <div class="reviewer-name">Sara Al Rashidi</div>
+          <div class="reviewer-loc">📍 Mall of the Emirates, Dubai</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"After a minor accident on Al Khail Road, AZK handled everything — recovery, towing, the whole thing. Transparent pricing, no surprises. 10 out of 10."</p>
+      <div class="reviewer">
+        <div class="avatar">AK</div>
+        <div>
+          <div class="reviewer-name">Ahmed Al Kaabi</div>
+          <div class="reviewer-loc">📍 Al Khail Road, Dubai</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY BAND -->
+<div class="emergency-band">
+  <h2>🚨 Need Help Right Now?</h2>
+  <p>Don't wait — our team is on standby 24/7 across all of Dubai. Call or WhatsApp us instantly.</p>
+  <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:8px;">
+    <a href="tel:+971559307106" class="phone-big">📞 +971 55 930 7106</a>
+    <a href="tel:+971507004728" class="phone-big">📞 +971 50 700 4728</a>
+  </div>
+  <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:16px;">
+    <a href="https://wa.me/971559307106" target="_blank" class="phone-big" style="background:rgba(37,211,102,0.25); font-size:1.4rem; padding:12px 28px;">
+      💬 WhatsApp +971 55 930 7106
+    </a>
+    <a href="https://wa.me/971507004728" target="_blank" class="phone-big" style="background:rgba(37,211,102,0.25); font-size:1.4rem; padding:12px 28px;">
+      💬 WhatsApp +971 50 700 4728
+    </a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-tag">Get in Touch</div>
+  <h2>Request Assistance</h2>
+  <div class="contact-grid">
+    <div class="contact-info fade-up">
+      <p style="color:var(--silver); max-width:400px; margin-bottom:10px; line-height:1.7;">
+        Fill out the form and our dispatch team will call you back within minutes, or reach us directly on call or WhatsApp — anytime.
+      </p>
+      <div class="contact-item">
+        <div class="c-icon">📞</div>
+        <div>
+          <h4>Call / WhatsApp</h4>
+          <p><a href="tel:+971559307106" style="color:var(--red); text-decoration:none;">+971 55 930 7106</a></p>
+          <p><a href="tel:+971507004728" style="color:var(--red); text-decoration:none;">+971 50 700 4728</a></p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="c-icon">💬</div>
+        <div>
+          <h4>WhatsApp</h4>
+          <p><a href="https://wa.me/971559307106" target="_blank" style="color:#25d366; text-decoration:none;">Chat on WhatsApp – 55 930 7106</a></p>
+          <p><a href="https://wa.me/971507004728" target="_blank" style="color:#25d366; text-decoration:none;">Chat on WhatsApp – 50 700 4728</a></p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="c-icon">📍</div>
+        <div>
+          <h4>Location</h4>
+          <p>Al Barsha, near Insurance Market Metro Station, Dubai, UAE</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="c-icon">🕐</div>
+        <div>
+          <h4>Operating Hours</h4>
+          <p>24 hours / 7 days a week / 365 days a year</p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form fade-up">
+      <div class="form-row">
+        <input type="text" placeholder="Your Full Name" />
+        <input type="tel" placeholder="Phone Number" />
+      </div>
+      <input type="text" placeholder="Your Current Location / Address" />
+      <select>
+        <option value="" disabled selected>Type of Service Needed</option>
+        <option>Emergency Towing</option>
+        <option>Roadside Assistance</option>
+        <option>Jump Start</option>
+        <option>Fuel Delivery</option>
+        <option>Lockout Service</option>
+        <option>Accident Recovery</option>
+      </select>
+      <textarea placeholder="Describe your situation (optional)..."></textarea>
+      <button class="btn-primary" style="width:100%; padding:18px;" onclick="alert('Request submitted! Our team will call you within 2 minutes.')">
+        🚨 Send Emergency Request
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">AZK <span>Car Recovery</span></div>
+      <p class="footer-desc">Professional car recovery and towing services in Dubai. Based in Al Barsha, near Insurance Market Metro. Available 24/7 to get you back on the road.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">Emergency Towing</a></li>
+        <li><a href="#services">Roadside Assistance</a></li>
+        <li><a href="#services">Jump Start</a></li>
+        <li><a href="#services">Fuel Delivery</a></li>
+        <li><a href="#services">Lockout Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#why">About Us</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+971559307106">📞 +971 55 930 7106</a></li>
+        <li><a href="tel:+971507004728">📞 +971 50 700 4728</a></li>
+        <li><a href="https://wa.me/971559307106" target="_blank">💬 WhatsApp 55 930 7106</a></li>
+        <li><a href="https://wa.me/971507004728" target="_blank">💬 WhatsApp 50 700 4728</a></li>
+        <li><a href="#">📍 Al Barsha, Dubai</a></li>
+        <li><a href="#">🕐 24/7 Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 AZK Car Recovery Dubai. All rights reserved.</p>
+    <p style="color:var(--steel);">Built with ❤️ for drivers in need.</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll fade-up animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Nav background on scroll
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.5)' : 'none';
+  });
+</script>
+</body>
+</html>
